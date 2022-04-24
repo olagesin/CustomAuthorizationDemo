@@ -39,8 +39,7 @@ namespace AuthorizationWithCustomClaim.Controllers
 
 
         [HttpGet("get-user")]
-        [CustomAuthChecker("Get User", AuthorizationType.AuthorizeByRoleClaim)]
-        [AllowAnonymous]
+        [CustomAuthChecker("Get User",AuthorizationType.AuthorizeByRoleClaim)]
         public async Task<IActionResult> GetUser(string userId)
         {
             return Ok(await userService.GetUser(userId));
